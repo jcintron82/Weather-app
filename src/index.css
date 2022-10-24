@@ -1,0 +1,58 @@
+body {
+  overflow-x: hidden;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header {
+  background-color: lightblue;
+}
+
+h1 {
+  margin: 0;
+
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.body {
+  background-color: lightgray;
+  height: 75vh;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.newLocationSearch {
+  min-width: 40vw;
+  max-width: 70vw;
+  border-radius: 10px;
+}
+
+.searchBtn {
+  font-size: 1em;
+  background-color: grey;
+  margin: 1em;
+  border-radius: 10%;
+  font-weight: bold;
+}
+
+.footer {
+  background-color: blue;
+  height: 100%;
+}
