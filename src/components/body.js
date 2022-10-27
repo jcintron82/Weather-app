@@ -6,36 +6,26 @@ import {useState} from 'react';
 
 function Body(props) {
 
-const [inputValue, setInputValue] = useState('');
+const [text, setText] = useState('');
 
-const handleChange = (event) => {
-  setInputValue(event.target.value);
-  console.log('h', event.target.value)
-   console.log(setInputValue)
-   console.log(inputValue)
+const handleChange = (e) => {
+  setText(e.target.value)
+  console.log(e.target.value)
 }
 
-
-const getData = (e) => {
-  const weatherData = e.target.value;
-  weatherData =+ inputValue
-  console.log(weatherData)
-}
-
- const onClickSearch = () => {
-  FetchAPI()
+ const onClickSearch = (event) => {
+  event.preventDefault();
+  FetchAPI(text)
+  console.log(text)
  }
 
   return (
+   
     <body className="body">
-    <div>
-    </div>
     <Button  onClick={onClickSearch} className='searchBtn' text='Search'/>
-    <Input className='newLocationSearch' type='text' onChange={handleChange}/>
-
+    <Input className='newLocationSearch' type='text'  onChange={handleChange}/>
     </body>
 
   );
 }
-
 export default Body;

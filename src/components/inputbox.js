@@ -1,9 +1,11 @@
-function Input({className,type,getData}) {
+import {useState} from 'react';
+
+function Input({className,type, onChange}) {
 
 
   return (
     <div>
-    <input className={className} type={type} onChange={getData}></input>
+    <input className={className} type={type} onChange={onChange} ></input>
     </div>
     );
 }

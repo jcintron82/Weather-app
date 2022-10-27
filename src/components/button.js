@@ -4,7 +4,8 @@ function Button({className, onClick, text}) {
   return (
     <div>
     <button onClick={onClick}
-      className={className}>
+      className={className}
+     >
         {text}
       </button>
     </div>

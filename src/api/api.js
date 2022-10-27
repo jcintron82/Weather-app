@@ -1,3 +1,5 @@
+import Header from '../components/header'
+// let data = ''
 export async function FetchAPI(location) {
 	try {
 	let result = await fetch ('http://api.openweathermap.org/data/2.5/weather?q=' + location +'&APPID=bd3dd8d1151b1e784fcf021aa29927c5',
@@ -11,7 +13,7 @@ export async function FetchAPI(location) {
 }
 
 async function processData(data) {
-	let div = document.getElementById('div')
+
 	console.log(data)
 	
 }
