@@ -3,15 +3,16 @@ import './App.css';
 import Header from './components/header'
 import Body from './components/body'
 import Footer from './components/footer'
-
+import { useState } from 'react';
 
 
 function App() {
 
-  const name = 'juan'
+
+
   return (
     <div className="container">
-    <Header  />
+   <Header />
     <Body />
     <Footer />
     
