@@ -1,10 +1,444 @@
+/*Header classes and styles for current weather background*/
+label {
+  font-size: 1em;
+}
+input {
+  font-size: 1.05em;
+}
 .header {
   color: white;
-  background-color: #0075A2;
+  background-color: #0F346B;
+  height: 20vh;
+}
+
+
+.locationDOM {
+  font-size: 2em;
+  font-weight: bold;
+  padding: .5rem;
+}
+
+.tempDOM {
+  font-size: 1.5em;
+  padding-left: .7rem;
+
+}
+
+.dateDOM {
+  font-size: 1em;
+  padding: .5rem;
+}
+
+.timeDOM {
+  font-size: 1em;
+  padding: .5rem;
 }
 
 .body {
   min-width: 100vw;
-  background-color: #B8B8B8;
+  display: flex;
+  min-height: 75vh;
+  background-color: #0F346B;
+  background-image: linear-gradient(#0F346B, white);
+  color: white;
 
+}
+
+.dataDivWrapper {
+  display: flex;
+  align-self: center;
+  margin-top: 50px;
+}
+
+.fiveDayHeaders, h5 {
+  display: flex;
+  justify-content: flex-start;
+  color: black;
+  font-size: 1em;
+}
+
+.fiveDayOutlookDecriptionWraps {
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-style: none none solid;
+  border-color: black;
+  text-align: left;
+  margin-bottom: 10px;
+  border-width: 1px;
+}
+
+.tempRowMobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 90px;
+
+}
+
+.locationDiv {
+  font-size: .75em;
+  font-style: italic;
+}
+
+
+.dataComponents {
+  padding: 1.5rem;
+  font-size: 1.25em;
+  margin: 10px;
+  display: flex;
+
+}
+
+.newLocationSearch {
+  height: 27.5px;
+  min-width: 300px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 1px -1px #0F346B;
+  margin: .3rem;
+  
+}
+.searchWrap {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column-reverse;
+  padding-bottom: 80px;
+  align-items: center;
+  margin-left: 40px;
+  padding-top: 80px;
+}
+.labels {
+  padding: .25rem;
+}
+.searchBtn {
+  width: 10rem;
+  border-radius: 10px;
+  font-family: 'roboto';
+  font-size: 1.2em;
+  align-self: center;
+  height: 1.7rem;
+
+}
+
+.footer {
+  background-color: #525252;
+}
+/*
+* {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+}
+*/
+
+@media ( max-width: 450px ) {
+.tempRowDesktop {
+ display: none;
+}
+.header {
+  color: white;
+  background-color: #0F346B;
+  height: 25vh;
+}
+
+.body {
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  background-image: none;
+  min-height: 115rem;
+}
+
+.locationDOM {
+  padding: .3rem;
+}
+
+.dateDOM {
+ display: none;
+}
+
+.timeDOM {
+ display: none;
+}
+
+.searchWrap {
+  align-self: center;
+  display: flex;
+  flex-direction: column-reverse;
+ padding-bottom: 3rem;
+ margin-left: 0;
+}
+
+.dataDivWrapper {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  max-width: 87.5vw;
+  flex-flow: column nowrap;
+  margin-top: 0;
+  padding: 10px;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+.fiveDayWrappers {
+    background-color: #EBEBEB;
+    margin-top: 10px;
+    border-radius: 10px;
+
+
+}
+.fiveDayHeaders {
+  font-size: 1.5em;
+  justify-content: center;
+  color: black;
+  background-color: #D6D6D6;
+  align-self: center;
+  width: 50%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  margin-bottom: 0;
+
+
+}
+
+.mainDataWrap {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  font-size: .75em;
+  width: 100%;
+}
+
+.dataComponentsWrap {
+ display: flex;
+ flex-flow: row wrap;
+ align-self: center;
+ justify-content: center;
+ max-width: 85vw;
+
+ }
+
+.dataComponents1,.dataComponents2,.dataComponents3,.dataComponents4 {
+   font-size: 1.25em;
+   color: black;
+   background-color: #D6D6D6;
+   font-weight: bold;
+   padding: 1.2rem;
+   margin: 0;
+   flex-flow: column wrap;
+   width: 32.5%;
+   text-align: center;
+   display: flex;
+
+}
+.dataComponents1 {
+  border-top-left-radius: 10px;
+   font-size: 22px;
+
+}
+
+.dataComponents2 {
+  border-bottom-left-radius: 10px;
+  font-size: 22px;
+}
+.dataComponents3 {
+   border-top-right-radius: 10px;
+  font-size: 22px;
+ }
+
+
+.dataComponents4 {
+   border-bottom-right-radius: 10px;
+
+}
+
+.weatherForecast {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+
+}
+
+.tempRowMobile {
+  display: flex;
+  align-items: center;
+  justify-content: safe center;
+  padding-top: 0;
+  color: black;
+  padding-right: 0;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+}
+
+/*@media (max-width:  380px) {
+  fiveDayHeaders
+}*/
+
+@media ( max-width: 325px ) {
+  .dataComponents1,.dataComponents2,.dataComponents3,.dataComponents4 {
+    font-size: 1em;
+   width: 32%;
+
+  }
+}
+
+@media(min-width: 450px) and (max-width: 650px){
+ .header{
+  height: 25vh;
+}}
+
+
+
+
+
+
+
+
+
+@media ( min-width: 450px ) and (max-width: 1135px) {
+  input:hover, .searchBtn:hover {
+  cursor: pointer;
+  }
+
+  .body {
+    min-height: 110vh;
+  }
+
+.dataDivWrapper {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+  flex-flow: row nowrap;
+  margin-top: 0;
+  padding: 10px;
+  background-color: #D6D6D6;
+  border-radius: 10px;
+   box-shadow: 6px 9px 5px 0px #0F346B;
+}
+
+.fiveDayOutlookDecriptionWraps {
+  font-size: 1.25em;
+  padding-bottom: 5px;
+  border-style: none none solid;
+  border-color: black;
+  text-align: left;
+  margin-bottom: 0;
+  color: black;
+  font-weight: bold;
+  border-width: 1px;
+}
+
+
+  .dataComponents1,.dataComponents2,.dataComponents3,.dataComponents4 {
+    font-size: 1em;
+   width: 32%;
+   padding: .3vw;
+   font-weight: bold;
+   margin-top: 0;
+   color: black;
+
+  }
+.searchWrap {
+  padding-bottom: 2.5vw;
+  margin-left: 0;
+  align-self: flex-start;
+  justify-content: center;
+  padding-left: 2.5vw;
+}
+
+.tempRowMobile {display: none;}
+}
+.tempRowDesktop {
+  width: 50%;
+  align-self: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius:10px ;
+  font-size: 1.25em;
+  background-color: #D6D6D6;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+   box-shadow: 5px 9px 5px 0px #0F346B;
+}
+
+.tabletViewForecastHeader {
+  display: flex;
+  flex-direction: column;
+ width: 100%;
+}
+
+.mainDataWrap {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  font-size: 1em;
+}
+
+@media ( min-width: 1135px )  {
+
+  .body {
+    min-height: 100vh;
+  }
+
+
+.dataDivWrapper {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  flex-flow: row nowrap;
+  background-color: #D6D6D6;
+  margin-top: 0;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+  box-shadow: 6px 9px 5px 0px #0F346B;
+}
+
+.tempRowDesktop {
+  width: 50%;
+  align-self: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius:10px ;
+  font-size: 1.25em;
+  background-color: #D6D6D6;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  padding: 1vw;
+  box-shadow: 5px -1px 5px 0px #0F346B;
+}
+  .dataComponents1,.dataComponents2,.dataComponents3,.dataComponents4 {
+    font-size: 1.2em;
+   width: 45%;
+   padding: .3vw;
+   font-weight: bold;
+   margin-top: 0;
+   text-align: ;
+
+  }
+  .tempRowMobile {display: none;}
+}
+.mainDataWrap {
+  width: 20%;
+}
+ .weatherForecast{
+    width: 100%;
+    display: flex;
+  }
+  input:hover, .searchBtn {
+  cursor: pointer;
+}
+ input, .searchBtn {
+  cursor: pointer;
+}
+
+@media (min-width: 320px) and (max-width: 450px) {
+  .mainDataWrap {
+    width: 100%;
+  }
 }
