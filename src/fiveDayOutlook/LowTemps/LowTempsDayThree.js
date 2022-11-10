@@ -13,7 +13,7 @@ export function FiveDayLowsDayThree({className}) {
 
 	return (
 		<div className={ className }><div className="fiveDayOutlookDecriptionWraps
-		">Low: </div> { temp } º F  </div>
+		">Windspeeds mph </div> { temp } º F  </div>
 		)
 	}
 

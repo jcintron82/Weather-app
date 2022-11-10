@@ -58,10 +58,10 @@ const [dayFiveName, setDayFiveName] = useState('');
 
 //Function which fetches the API on page load so the data components aren't 
 //empty when the user first opens the page.
-useEffect(() => {
-        functionFloat.function('Tampa, Florida');
-        setLocation('Tampa')
-     });
+// useEffect(() => {
+//         functionFloat.function('Tampa, Florida');
+//         setLocation('Tampa')
+//      });
 
 
 functionFloat.setFiveDayNamesState = async function processFiveDayData( day1, day2,

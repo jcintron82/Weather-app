@@ -8,7 +8,8 @@ function Footer() {
  
   return (
     <footer className='footer'>
-    Footer
+    clickable github logo
+    @jcintron82
     <Button color='red' text='' onClick={onClickGithub}/>
     </footer>
     

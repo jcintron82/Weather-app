@@ -13,7 +13,7 @@ export function HighTempsDayTwo({className}) {
 
 	return (
 		<div className={ className }> <div className="fiveDayOutlookDecriptionWraps
-		">High: </div>{ temp }º F </div>
+		">RealFeel High: </div>{ temp }º F </div>
 		)
 	}
 

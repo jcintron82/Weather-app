@@ -4,7 +4,7 @@ import  Button  from "./button";
 import { createContext, useContext } from "react";
 import clouds from "../images/clouds.jpg";
 import sunnyday from "../images/sunnyday.jpg";
-import rainyday from "../images/rainyday.jpg";
+import rainyday from "../images/rainyday.avif";
 import snowyday from "../images/snowyday.jpg";
 import { float2 } from "./body";
 
@@ -20,11 +20,11 @@ export function Header({ tempValue, locationValue, onChange }) {
 
 
   //Creates state(s) to hold weather data
-  const [locationDOM, setLocation] = useState(1);
-  const [StateDOM, setState] = useState("x");
-  const [tempDOM, setTemp] = useState(1);
-  const [dateDOM, setDate] = useState(1);
-  const [timeDOM, setTime] = useState(1);
+  const [locationDOM, setLocation] = useState('');
+  const [StateDOM, setState] = useState('');
+  const [tempDOM, setTemp] = useState('');
+  const [dateDOM, setDate] = useState('');
+  const [timeDOM, setTime] = useState('');
   const [background, setBackground] = useState("");
 
   async function geocodeState(data) {
@@ -94,7 +94,7 @@ export function Header({ tempValue, locationValue, onChange }) {
 
   async function processData(data, fiveDayData) {
     geocodeState(data);
-    console.log(data)
+    console.log(fiveDayData)
     let extForecastDay1Date = new Date(fiveDayData.list[5].dt * 1000);
     let extForecastDay2Date = new Date(fiveDayData.list[13].dt * 1000);
     let extForecastDay3Date = new Date(fiveDayData.list[21].dt * 1000);
