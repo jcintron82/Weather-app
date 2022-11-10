@@ -1,9 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/header'
-import Body from './components/body'
-import Footer from './components/footer'
-import { useState } from 'react';
+import Header from './components/header';
+import Body from './components/body';
 
 
 function App() {
@@ -14,8 +11,6 @@ function App() {
     <div className="container">
    <Header />
     <Body />
-    {/*<Footer />*/}
-    
     </div>
   );
 }

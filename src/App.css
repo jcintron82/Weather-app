@@ -11,7 +11,6 @@ input {
   height: 20vh;
 }
 
-
 .locationDOM {
   font-size: 2em;
   font-weight: bold;
@@ -21,7 +20,6 @@ input {
 .tempDOM {
   font-size: 1.5em;
   padding-left: .7rem;
-
 }
 
 .dateDOM {
@@ -33,6 +31,11 @@ input {
   font-size: 1em;
   padding: .5rem;
 }
+.currentForecastDOM {
+  font-size: 1em;
+  padding: .5rem;
+}
+
 
 .body {
   min-width: 100vw;
@@ -41,7 +44,6 @@ input {
   background-color: #0F346B;
   background-image: linear-gradient(#0F346B, white);
   color: white;
-
 }
 
 .dataDivWrapper {
@@ -72,7 +74,6 @@ input {
   flex-direction: column;
   justify-content: center;
   padding-top: 90px;
-
 }
 
 .locationDiv {
@@ -80,13 +81,11 @@ input {
   font-style: italic;
 }
 
-
 .dataComponents {
   padding: 1.5rem;
   font-size: 1.25em;
   margin: 10px;
   display: flex;
-
 }
 
 .newLocationSearch {
@@ -94,8 +93,7 @@ input {
   min-width: 300px;
   border-radius: 25px;
   box-shadow: 2px 2px 1px -1px #0F346B;
-  margin: .3rem;
-  
+  margin: .3rem; 
 }
 .searchWrap {
   align-self: flex-start;
@@ -184,8 +182,6 @@ input {
     background-color: #EBEBEB;
     margin-top: 10px;
     border-radius: 10px;
-
-
 }
 .fiveDayHeaders {
   font-size: 1.5em;
@@ -197,8 +193,6 @@ input {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   margin-bottom: 0;
-
-
 }
 
 .mainDataWrap {
@@ -215,7 +209,6 @@ input {
  align-self: center;
  justify-content: center;
  max-width: 85vw;
-
  }
 
 .dataComponents1,.dataComponents2,.dataComponents3,.dataComponents4 {
@@ -246,17 +239,14 @@ input {
   font-size: 22px;
  }
 
-
 .dataComponents4 {
    border-bottom-right-radius: 10px;
-
 }
 
 .weatherForecast {
   font-size: 18px;
   display: flex;
   align-items: center;
-
 }
 
 .tempRowMobile {
@@ -287,14 +277,6 @@ input {
  .header{
   height: 25vh;
 }}
-
-
-
-
-
-
-
-
 
 @media ( min-width: 450px ) and (max-width: 1135px) {
   input:hover, .searchBtn:hover {
@@ -330,7 +312,6 @@ input {
   font-weight: bold;
   border-width: 1px;
 }
-
 
   .dataComponents1,.dataComponents2,.dataComponents3,.dataComponents4 {
     font-size: 1em;
@@ -382,7 +363,6 @@ input {
   .body {
     min-height: 100vh;
   }
-
 
 .dataDivWrapper {
   display: flex;

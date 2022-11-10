@@ -1,31 +1,25 @@
 import { useState } from "react";
 import { Div } from "./divs";
-import  Button  from "./button";
-import { createContext, useContext } from "react";
 import clouds from "../images/clouds.jpg";
 import sunnyday from "../images/sunnyday.jpg";
 import rainyday from "../images/rainyday.avif";
 import snowyday from "../images/snowyday.jpg";
-import { float2 } from "./body";
+import thunderstorm from "../images/thunderstorm.avif";
+
 
 export const functionFloat = {};
 export const fiveDayDataFloat = {};
 
 let weatherMain = "";
-function changeTempUnit() {
-  functionFloat.FetchAPI()
-}
 
 export function Header({ tempValue, locationValue, onChange }) {
-
-
   //Creates state(s) to hold weather data
-  const [locationDOM, setLocation] = useState('');
-  const [StateDOM, setState] = useState('');
-  const [tempDOM, setTemp] = useState('');
-  const [dateDOM, setDate] = useState('');
-  const [timeDOM, setTime] = useState('');
-  const [background, setBackground] = useState("");
+  const [locationDOM, setLocation] = useState("");
+  const [StateDOM, setState] = useState("");
+  const [tempDOM, setTemp] = useState("");
+  const [dateDOM, setDate] = useState("");
+  const [timeDOM, setTime] = useState("");
+  const [forecastDOM, setForecast] = useState("");
 
   async function geocodeState(data) {
     let latitude = data.coord.lat;
@@ -83,10 +77,7 @@ export function Header({ tempValue, locationValue, onChange }) {
       let finalFiveDay = await fiveDayResult.json();
       // let finalgeocodeState = await sixteen.json();
 
-      return (
-        processData(final, finalFiveDay),
-        geocodeState(final)
-      );
+      return processData(final, finalFiveDay), geocodeState(final);
     } catch (err) {
       alert(err);
     }
@@ -94,7 +85,6 @@ export function Header({ tempValue, locationValue, onChange }) {
 
   async function processData(data, fiveDayData) {
     geocodeState(data);
-    console.log(fiveDayData)
     let extForecastDay1Date = new Date(fiveDayData.list[5].dt * 1000);
     let extForecastDay2Date = new Date(fiveDayData.list[13].dt * 1000);
     let extForecastDay3Date = new Date(fiveDayData.list[21].dt * 1000);
@@ -198,14 +188,16 @@ export function Header({ tempValue, locationValue, onChange }) {
       hour12: true,
     });
 
-    if (data.weather[0].main == "Clouds") {
+    if (data.weather[0].main === "Clouds") {
       weatherMain = clouds;
-    } else if (data.weather[0].main == "Clear") {
+    } else if (data.weather[0].main === "Clear") {
       weatherMain = sunnyday;
-    } else if (data.weather[0].main == "Rain" || "Drizzle" || "Thunderstorm") {
+    } else if (data.weather[0].main === "Rain" || "Drizzle") {
       weatherMain = rainyday;
-    } else if (data.weather[0].main == "Snow") {
+    } else if (data.weather[0].main === "Snow") {
       weatherMain = snowyday;
+    } else if (data.weather[0].main === "Thunderstorm") {
+      weatherMain = thunderstorm
     }
 
     //Sets the state for the main data values
@@ -213,6 +205,7 @@ export function Header({ tempValue, locationValue, onChange }) {
     setTemp(data.main.temp + "º" + " F");
     setDate(dayname);
     setTime(currentTime);
+    setForecast(data.weather[0].main)
   }
 
   return (
@@ -225,7 +218,7 @@ export function Header({ tempValue, locationValue, onChange }) {
       }}
     >
       <div>
-    {/*  <Button onClick={() => {changeTempUnit()
+        {/*  <Button onClick={() => {changeTempUnit()
      } } className='searchBtn' text='Search'/>*/}
         <Div className="locationDOM" text={locationDOM} />
         <Div className="locationDOM" text={StateDOM} />
@@ -234,6 +227,7 @@ export function Header({ tempValue, locationValue, onChange }) {
       <div className="tempDOM">
         <Div className="dateDOM" text={dateDOM} />
         <Div className="timeDOM" text={timeDOM} />
+        <Div className="timeDOM" text={forecastDOM} />
       </div>
     </header>
   );
